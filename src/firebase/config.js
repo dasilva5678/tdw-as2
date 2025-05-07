@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { fetchSignInMethodsForEmail } from "firebase/auth";
 
 // Configuração do Firebase
 const firebaseConfig = {
@@ -9,15 +10,15 @@ const firebaseConfig = {
   projectId: "tdw-as2-bb7e6",
   storageBucket: "tdw-as2-bb7e6.firebasestorage.app",
   messagingSenderId: "332817043933",
-  appId: "1:332817043933:web:6a9b67425f864850a36634"
+  appId: "1:332817043933:web:6a9b67425f864850a36634",
 };
 
 // Inicialização do Firebase
 const app = initializeApp(firebaseConfig);
 
-// Serviços que usaremos no projeto
+// Serviços
 const auth = getAuth(app);
 const db = getFirestore(app);
 
 // Exportando para usar nas outras partes do projeto
-export { auth, db };
+export { auth, db, fetchSignInMethodsForEmail };
