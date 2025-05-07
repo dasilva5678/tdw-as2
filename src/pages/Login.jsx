@@ -13,12 +13,6 @@ const TelaLogin = () => {
 
   const realizarLogin = async () => {
     try {
-      var credenciais = await fetchSignInMethodsForEmail(auth, email);
-
-      if (credenciais.length === 0) {
-        setErro("E-mail não cadastrado.");
-        return;
-      }
       await signInWithEmailAndPassword(auth, email, senha);
       window.location.href = "/principal";
     } catch (error) {
